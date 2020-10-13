@@ -1,0 +1,38 @@
+$grid-columns: 12 !default;
+$grid-gutter-width: 20px !default;
+
+$container-max-widths: (
+  sm: 420px,
+  md: 720px,
+  lg: 1280px,
+);
+
+$font-stack: Arial, sans-serif;
+$danger-color: #ff0000cf;
+$primary-color: #6973bf;
+$border-color: rgba(0, 0, 0, 0.125);
+$case-color: #7e8ae6;
+$text-color: #232640;
+$bg-color: #f0f0f0;
+$bg2-color: #fff;
+$small-font-size: 10px;
+$btn-font-size: 12px;
+$base-font-size: 14px;
+$base-line-height: 16px;
+$base2-font-size: 20px;
+$big-font-size: 40px;
+$base3-font-size: 24px;
+$border-sides: #485922 solid 1px;
+
+.col,
+[class*="col-"],
+.container-fluid,
+.container {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.row {
+  margin-right: -10px;
+  margin-left: -10px;
+}

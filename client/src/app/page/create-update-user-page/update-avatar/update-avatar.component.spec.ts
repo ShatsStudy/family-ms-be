@@ -1,0 +1,32 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { UpdateAvatarComponent } from './update-avatar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+describe('UpdateAvatarComponent', () => {
+  let component: UpdateAvatarComponent;
+  let fixture: ComponentFixture<UpdateAvatarComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ UpdateAvatarComponent ],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule
+      ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UpdateAvatarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

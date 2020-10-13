@@ -1,0 +1,124 @@
+@import "../../../common/css/theme";
+
+.btn-group.width-100 {
+  width: 100%;
+}
+
+.btn.dropdown-toggle.filter-el {
+  display: flex;
+  height: 50px;
+  padding: 0 56px 0 20px;
+  align-items: center;
+  border-radius: 0;
+  border-color: $border-color;
+  color: $text-color;
+  background: $bg2-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-align: left;
+  cursor: pointer;
+}
+
+.btn-group.width-100 .btn.dropdown-toggle.filter-el {
+  width: 100%;
+  text-align: left;
+}
+
+.btn.dropdown-toggle.filter-el:focus,
+.btn.dropdown-toggle.filter-el:active {
+  outline: 0;
+  box-shadow: none;
+}
+
+.dropdown-toggle.filter-el::after {
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 17px;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background: url("../../../../assets/img/arrow_down.svg") center center no-repeat;
+}
+
+.dropdown-toggle.filter-el[aria-expanded="true"]::after {
+  background: url("../../../../assets/img/arrow_up.svg") center center no-repeat;
+}
+
+.dropdown-menu.filter-el {
+  margin: -1px 0 0 0;
+  padding: 0;
+  border-radius: 0;
+  border-color: $case-color;
+  color: $primary-color;
+  background: $bg2-color;
+}
+
+.btn-group.width-100 .dropdown-menu.filter-el {
+  width: 100%;
+  z-index: 100;
+  right: auto !important;
+  left: 0 !important;
+}
+
+.btn-group.width-100.popup-to-left .dropdown-menu.filter-el {
+  top: 50% !important;
+  right: 100% !important;
+  margin: 0 -1px 0 0;
+}
+
+.btn-group.width-100.half-top .dropdown-menu.filter-el,
+.btn-group.width-100.full-top .dropdown-menu.filter-el {
+  top: 0 !important;
+  transform: translateY(-100%) !important;
+  margin: 1px 0 0 0;
+}
+
+.dropdown-menu.filter-el li {
+  padding: 0;
+}
+
+.dropdown-menu.filter-el li a {
+  position: relative;
+  padding: 17px 56px 17px 20px;
+  color: $primary-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  white-space: initial;
+}
+
+.dropdown-menu.filter-el li a:hover {
+  background: $bg-color;
+}
+
+.dropdown-menu.filter-el li a:active,
+.dropdown-menu.filter-el li a.active:active,
+.dropdown-menu.filter-el li a.active {
+  background: $bg-color;
+}
+
+.dropdown-menu.filter-el li a.active:after {
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 17px;
+  width: 16px;
+  height: 16px;
+  background: url("../../../../assets/img/symbol_ok.svg") center center no-repeat;
+  background-size: contain;
+  content: "";
+}
+
+.btn-group {
+  width: 100%;
+}
+
+@media (max-width: 670px) {
+  .btn-group.width-100 {
+    display: block;
+  }
+
+  .btn-group.width-100 .dropdown-menu.filter-el {
+    position: relative !important;
+  }
+}

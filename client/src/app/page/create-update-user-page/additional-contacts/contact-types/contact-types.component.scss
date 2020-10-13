@@ -1,0 +1,30 @@
+@import "../../../../common/css/theme";
+@import "../../../../common/css/theme.form";
+
+.btn-group {
+  display: block;
+}
+.btn-group button {
+  width:100%;
+}
+.dropdown-menu {
+  position: relative;
+  left: 0;
+  right: auto;
+  float: none;
+  margin: -1px;
+  top: 100%;
+  bottom: auto;
+  background-color: $bg2-color;
+  color: $primary-color;
+  border: $case-color solid 1px;
+  width: 101%;
+}
+
+@media (max-width: 991px) {
+  @media (min-width: 600px) {
+    .dropdown-menu {
+      position: absolute;
+    }
+  }
+}

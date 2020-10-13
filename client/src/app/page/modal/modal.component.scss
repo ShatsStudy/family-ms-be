@@ -1,0 +1,165 @@
+@import "../../common/css/theme";
+@import "../../common/css/theme.form";
+
+.text-reassign {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 15px;
+  height: 48px;
+}
+
+.filter-item-container {
+  display: block;
+  width: 100%;
+}
+
+::ng-deep .modal-content {
+  background-color: $bg-color;
+  border-radius: 0;
+  color: $primary-color;
+  font-family: $font-stack;
+}
+
+::ng-deep .modal-content {
+  border: none;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.btn-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: $primary-color;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+}
+
+.name-grid {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.excerpt-grid {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+.text-grid {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+
+.fromName-grid {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+
+.reassignFrom-grid {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 6;
+  grid-row-end: 6;
+}
+
+.addTask-grid {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-left: 34px;
+}
+
+.no-visible {
+  display: none;
+}
+
+.input-group-prepend,
+.form-control {
+  height: 50px;
+  border-radius: 0;
+  background-color: #fff;
+  color: $primary-color;
+  border: $case-color solid 1px;
+  float: left;
+  font-size: 14px;
+}
+
+.input-group-prepend span {
+  width: 138px;
+  background-color: $case-color;
+  border-radius: 0;
+  color: $primary-color;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+}
+
+.text-grid textarea {
+  height: 120px;
+}
+
+::ng-deep .modal-dialog {
+  top: 30px;
+}
+
+.close {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  background-color: $bg2-color;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  border: 0;
+  text-align: center;
+}
+
+.close:focus {
+  outline: 0;
+}
+
+.close span {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  width: 100%;
+  color: $border-color;
+  font-size: 32px;
+  line-height: 16px;
+}
+
+.close:not(:disabled):not(.disabled):hover {
+  background: $primary-color;
+  opacity: 1;
+}
+
+.close:hover span {
+  text-shadow: none;
+}
+
+@media (max-width: 610px) {
+  .close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: transparent;
+  }
+}

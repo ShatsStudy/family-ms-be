@@ -1,0 +1,36 @@
+[
+  {
+    "employees": [
+      {
+        "_id": "5c9a06728c40cb0e8cd39d14",
+        "position": "junior angular developer",
+        "firstName": "Гріша",
+        "lastName": "Пияк"
+      }
+    ],
+    "_id": "5ca47f14de63ed1f6849605d",
+    "name": "Development",
+    "positions":["junior angular developer", "junior react developer"]
+  },
+  {
+    "employees": [],
+    "_id": "5ca47f24de63ed1f6849605e",
+    "name": "Sales"
+  },
+  "department":{
+    "employees": [
+      {
+        "_id": "5c9a062d8c40cb0e8cd39d0a",
+        "firstName": "Sobakapirat",
+        "lastName": "Kadylo"
+      },
+      {
+        "_id": "5c9a065b8c40cb0e8cd39d11",
+        "firstName": "Sobakapirat",
+        "lastName": "Ivan"
+      }
+    ],
+    "_id": "5ca47f2cde63ed1f6849605f",
+    "name": "Management"
+  }
+]

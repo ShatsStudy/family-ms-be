@@ -1,0 +1,27 @@
+@import "./app/common/css/theme";
+/* You can add global styles to this file, and also import other style files */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: $bg-color;
+}
+body::-webkit-scrollbar-thumb {
+  height: 10px;
+  border-radius: 1px;
+
+  background-color: $primary-color;
+  transition: 0.6s ease-in-out;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: $case-color;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,113 @@
+@import '../../../../common/css/theme';
+
+.btn.dropdown-toggle.option-el {
+  border-radius: 0;
+  color: $primary-color;
+  background: $bg2-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-align: left;
+  height: 50px;
+  border-right: $border-sides;
+  border-top: $border-sides;
+  border-bottom: $border-sides;
+}
+.border-red {
+  border-left: 5px solid #ff000069;
+}
+.border-green {
+  border-left: 5px solid #28a74575;
+}
+.border-blue {
+  border-left: 5px solid $primary-color;
+}
+.btn-group {
+  display: block;
+}
+.btn-group button {
+  width:100%;
+}
+.dropdown-menu {
+  position: relative;
+  left: 0;
+  right: auto;
+  float: none;
+  margin: -1px;
+  top: 100%;
+  bottom: auto;
+  background-color: #fff;
+  color: $primary-color;
+  border: $case-color solid 1px;
+  width: 101%;
+}
+.dropdown-item{
+  margin: 5px;
+  color: $primary-color;
+  font-family: $font-stack;
+  white-space: inherit;
+  line-height: normal;
+}
+.container-for-checkbox{
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  margin: 15px 15px 10px 15px;
+  color: $primary-color;
+  font-family: $font-stack;
+  white-space: inherit;
+  line-height: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container-for-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+.container-for-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container-for-checkbox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container-for-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.container-for-checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@media (max-width: 991px) {
+  @media (min-width: 600px) {
+    .dropdown-menu {
+      position: absolute;
+    }
+  }
+}
+
+

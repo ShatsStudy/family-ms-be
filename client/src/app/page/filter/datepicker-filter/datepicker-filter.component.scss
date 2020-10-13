@@ -1,0 +1,378 @@
+@import "../../../common/css/theme";
+
+.btn-group.width-100 {
+  width: 100%;
+}
+
+.btn.dropdown-toggle.filter-el {
+  height: 50px;
+  padding: 0 56px 0 20px;
+  border-radius: 0;
+  border-color: $border-color;
+  color: $text-color;
+  background: $bg2-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-align: left;
+}
+
+.btn-group.width-100 .btn.dropdown-toggle.filter-el {
+  width: 100%;
+  text-align: left;
+}
+
+.btn.dropdown-toggle.filter-el:focus,
+.btn.dropdown-toggle.filter-el:active {
+  outline: 0;
+  box-shadow: none;
+}
+
+.dropdown-toggle.filter-el::after {
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 17px;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background: url("../../../../assets/img/arrow_down.svg") center center no-repeat;
+}
+
+.dropdown-toggle.filter-el[aria-expanded="true"]::after {
+  background: url("../../../../assets/img/arrow_up.svg") center center no-repeat;
+}
+
+.dropdown-menu.filter-el {
+  margin: -1px 0 0 0;
+  padding: 0;
+  border-radius: 0;
+  border-color: $case-color;
+  color: $primary-color;
+  background: $bg2-color;
+}
+
+.btn-group.width-100.popup-pos-relative.popup-to-right {
+  display: block;
+}
+
+.btn-group.width-100 .dropdown-menu.filter-el {
+  right: 0 !important;
+  left: auto !important;
+  width: 318px;
+  min-width: 100%;
+  z-index: 100;
+}
+
+.btn-group.width-100.popup-to-left .dropdown-menu.filter-el {
+  top: 50% !important;
+  right: 100% !important;
+  margin: 0 -1px 0 0;
+}
+
+.btn-group.width-100.popup-to-right .dropdown-menu.filter-el {
+  right: 0 !important;
+  left: auto !important;
+}
+
+.btn-group.width-100.half-top .dropdown-menu.filter-el {
+  transform: translateY(-51%) !important;
+}
+
+.btn-group.width-100.popup-to-right.popup-to-left.half-top .dropdown-menu.filter-el {
+  right: 100% !important;
+}
+
+.btn-group.width-100.full-top .dropdown-menu.filter-el {
+  top: 0 !important;
+  transform: translateY(-100%) !important;
+  margin: 1px 0 0 0;
+}
+
+.btn-group.width-100.popup-pos-relative .dropdown-menu.filter-el {
+  position: relative !important;
+  clear: both;
+  float: none;
+  min-width: auto;
+}
+
+.btn-group .dropdown-menu.filter-el .form-group,
+::ng-deep bs-datepicker-inline,
+::ng-deep bs-datepicker-inline-container,
+::ng-deep bs-calendar-layout,
+::ng-deep bs-days-calendar-view,
+::ng-deep bs-month-calendar-view,
+::ng-deep bs-years-calendar-view,
+::ng-deep .bs-datepicker,
+::ng-deep .bs-calendar-container,
+::ng-deep .bs-datepicker-container,
+::ng-deep .bs-media-container {
+  position: relative;
+  width: 100%;
+}
+
+::ng-deep bs-calendar-layout,
+::ng-deep bs-days-calendar-view,
+::ng-deep bs-datepicker-inline,
+::ng-deep bs-datepicker-inline-container {
+  display: block;
+}
+
+.dropdown-menu.filter-el li {
+  padding: 0;
+}
+
+.dropdown-menu.filter-el li a {
+  position: relative;
+  padding: 17px 20px 17px 20px;
+  color: $primary-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-align: right;
+}
+
+.dropdown-menu.filter-el li a:hover,
+.dropdown-menu.filter-el li a:active,
+.dropdown-menu.filter-el li a.active:active,
+.dropdown-menu.filter-el li a.active {
+  text-decoration: underline;
+  background: none;
+}
+
+.dropdown-menu.filter-el li a.active:after {
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 17px;
+  width: 16px;
+  height: 16px;
+  background: url("../../../../assets/img/symbol_ok.svg") center center no-repeat;
+  background-size: contain;
+  content: "";
+}
+
+.dropdown-menu.filter-el li .form-group {
+  margin-bottom: 0;
+}
+
+::ng-deep .bs-datepicker {
+  box-shadow: none;
+}
+
+::ng-deep .bs-datepicker-container {
+  padding: 0;
+}
+
+::ng-deep .theme-green .bs-datepicker-head {
+  height: auto;
+  width: 100%;
+  background: none;
+  border-radius: 0;
+  color: $primary-color;
+  background: $bg2-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-transform: uppercase;
+}
+
+::ng-deep .bs-datepicker-head:after {
+  display: none;
+}
+
+::ng-deep .bs-datepicker-head button {
+  color: $primary-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-transform: uppercase;
+}
+
+::ng-deep .bs-datepicker-head button.previous + *:not(button),
+::ng-deep .bs-datepicker-head button.current + *:not(button) {
+  display: none;
+}
+
+::ng-deep bs-datepicker-navigation-view {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 0;
+}
+
+::ng-deep .bs-datepicker-head button {
+  border-radius: 0 !important;
+}
+
+::ng-deep .bs-datepicker-head button:hover {
+  background-color: $bg-color;
+}
+
+::ng-deep .bs-datepicker-head button.current {
+  padding: 7px 5px;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-transform: uppercase;
+}
+
+::ng-deep .bs-datepicker-head button.next,
+::ng-deep .bs-datepicker-head button.previous {
+  padding: 7px 10px;
+  background-image: url("../../../../../src/assets/img/arrow_left.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+::ng-deep .bs-datepicker-head button.previous {
+  margin-right: auto;
+}
+
+::ng-deep .bs-datepicker-head button.next {
+  margin-left: auto;
+  background-image: url("../../../../../src/assets/img/arrow_right.svg");
+}
+
+::ng-deep .bs-datepicker-head button.next span,
+::ng-deep .bs-datepicker-head button.previous span {
+  display: none;
+}
+
+::ng-deep .bs-datepicker-body {
+  border: 0;
+  padding: 0;
+}
+
+::ng-deep .bs-datepicker-body table th:first-child,
+::ng-deep .bs-datepicker-body table td.week {
+  display: none;
+}
+
+::ng-deep .bs-datepicker-body table th {
+  padding: 17px 0;
+  color: $primary-color;
+  background: $bg-color;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-transform: uppercase;
+}
+
+::ng-deep .bs-datepicker-body table th:nth-child(2):after,
+::ng-deep .bs-datepicker-body table th:nth-child(3):after,
+::ng-deep .bs-datepicker-body table th:nth-child(4):after,
+::ng-deep .bs-datepicker-body table th:nth-child(5):after,
+::ng-deep .bs-datepicker-body table th:nth-child(6):after,
+::ng-deep .bs-datepicker-body table th:nth-child(7):after,
+::ng-deep .bs-datepicker-body table th:nth-child(8):after {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+::ng-deep .bs-datepicker-body table th:nth-child(2):after {
+  content: "S";
+}
+
+::ng-deep .bs-datepicker-body table th:nth-child(3):after {
+  content: "M";
+}
+
+::ng-deep .bs-datepicker-body table th:nth-child(4):after {
+  content: "T";
+}
+
+::ng-deep .bs-datepicker-body table th:nth-child(5):after {
+  content: "W";
+}
+
+::ng-deep .bs-datepicker-body table th:nth-child(6):after {
+  content: "T";
+}
+
+::ng-deep .bs-datepicker-body table th:nth-child(7):after {
+  content: "F";
+}
+
+::ng-deep .bs-datepicker-body table th:nth-child(8):after {
+  content: "S";
+}
+
+::ng-deep .bs-datepicker-body table.days tr > * {
+  width: calc(100% / 7);
+}
+
+::ng-deep .bs-datepicker-body table td span,
+::ng-deep .bs-datepicker-body table.days span {
+  padding: 17px 0;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  background-color: $bg2-color;
+  color: $primary-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+::ng-deep .bs-datepicker-body table.days tbody tr:nth-child(2n) span {
+  background-color: $bg-color;
+}
+
+::ng-deep .theme-green .bs-datepicker-body table td span.selected {
+  color: $primary-color !important;
+  background-color: $case-color !important;
+}
+
+::ng-deep .bs-datepicker-body table td.is-highlighted,
+::ng-deep .bs-datepicker-body table.days span:hover,
+::ng-deep .bs-datepicker-body table.days span.is-highlighted,
+::ng-deep .bs-datepicker-body table td span.is-highlighted:not(.disabled):not(.selected) {
+  color: $primary-color;
+  background-color: $case-color;
+  opacity: 0.5 !important;
+}
+
+::ng-deep .bs-datepicker-body table td.is-highlighted span {
+  border-radius: 0;
+  background-color: transparent !important;
+}
+
+::ng-deep .theme-green .bs-datepicker-body table td span.selected {
+  opacity: 1;
+}
+
+::ng-deep .bs-datepicker-body table.days span.is-other-month {
+  color: $case-color;
+}
+
+::ng-deep .bs-datepicker-body table.days span.is-other-month.is-highlighted,
+::ng-deep .bs-datepicker-body table.days span.is-other-month.is-highlighted:not(.disabled):not(.selected),
+::ng-deep .bs-datepicker-body table.days span.is-other-month:hover {
+  background-color: $bg-color;
+}
+
+::ng-deep .bs-datepicker-body table.years td span,
+::ng-deep .bs-datepicker-body table.years tr:not(:last-child) td span {
+  margin: 0 !important;
+  height: auto;
+  width: auto;
+  padding: 0;
+}
+
+@media (max-width: 860px) {
+  .btn-group.width-100 .dropdown-menu.filter-el {
+    right: auto !important;
+    left: 0 !important;
+  }
+
+  @media (max-width: 670px) {
+    .btn-group.width-100 {
+      display: block;
+    }
+
+    .btn-group.width-100 .dropdown-menu.filter-el {
+      position: relative !important;
+      width: 100%;
+    }
+
+    .btn-group.width-100.half-top .dropdown-menu.filter-el {
+      transform: none !important;
+    }
+  }
+}

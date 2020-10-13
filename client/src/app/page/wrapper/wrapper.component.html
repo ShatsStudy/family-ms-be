@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-lg-4 sidebar-wrapper">
+    <app-user-bar-info class="user-bar-info" [userinfo]="user"></app-user-bar-info>
+  </div>
+  <main class="col-lg-8 content-wrapper">
+    <app-add-task-form *ngIf="userRole === 'child'" [hideHeader]="false" class="container-fluid"></app-add-task-form>
+    <app-filter class="container-fluid filter-wrapper {{filterGrids}}" [cssClass]="filterGrids" [filters]="filters"
+      (getFilter)="selectFilterOption($event)"></app-filter>
+    <div class="container-fluid list-wrapper">
+      <app-list [tasks]="tasks| filterTasksBy: filters"></app-list>
+    </div>
+    <app-modal *ngIf="userRole !== 'child'" [modalType]="modalTypeVal" [task]="emptyTask"></app-modal>
+  </main>
+</div>

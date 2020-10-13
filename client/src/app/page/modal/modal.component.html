@@ -1,0 +1,97 @@
+<div *ngIf="modalType === 'RE-ASSIGNE'" class="re-assign">
+  <button type="button" class="btn btn-outline-primary text-reassign" (click)="openModal(template)">
+    RE-ASSIGN
+  </button>
+</div>
+<div *ngIf="modalType === 'CREATE'">
+  <button type="button" class="btn btn-circle" (click)="openModal(createTask)">
+    <img src="assets/img/plus-to-add-button.svg" alt="create task"/>
+  </button>
+</div>
+<ng-template #createTask>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">CREATE TASK</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-add-task-form [hideHeader]="true" class="container-fluid"></app-add-task-form>
+  </div>
+</ng-template>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">UPDATE TASK</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="container-fluid" *ngIf="updateTask && !errorAssignTo">
+    <div class="row alert alert-success">
+      <span>Your issue was update.</span>
+    </div>
+  </div>
+  <div class="container-fluid" *ngIf="errorAssignTo">
+    <div class="row alert alert-danger">
+      <span>You can't assign to yourself!</span>
+    </div>
+  </div>
+  <div *ngIf="isFieldCorrectLength('name')" class="alert alert-danger visible-temporarily">
+    The task name have to be 5 symbols at least.
+  </div>
+  <div *ngIf="isFieldCorrectLength('excerpt')" class="alert alert-danger visible-temporarily">
+    The task summary have to be 9 symbols at least.
+  </div>
+  <div *ngIf="isFieldCorrectLength('content')" class="alert alert-danger visible-temporarily">
+    The task description have to be max 400 symbols.
+  </div>
+  <div class="modal-body" >
+    <form [formGroup]="modalForm" (ngSubmit)="onSubmit($event)">
+    <div class="modal-grid">
+      <div class="name-grid">
+        <input class="no-visible" type="text" value="{{task.id}}" name="id">
+        <input class="form-control" id="name" type="text" name="name" value="{{task.name}}" required formControlName="name">
+      </div>
+      <div class="filter-grid">
+        <app-dropdown-filter class="filter-item-container"
+                       [filterItem]="filter"
+                       (filterVal)="getFilterVal($event)"></app-dropdown-filter>
+      </div>
+      <div class="btn-group assign-grid">
+        <app-dropdown-filter class="filter-item-container"
+                       [filterItem]="userDropDown"
+                       (filterVal)="getFilterValUserDropDown($event)"></app-dropdown-filter>
+      </div>
+      <div class=" btn-group date-grid">
+        <input type="text" disabled value="{{ task.date }}" class="form-control" name="date" value="{{ task.date | date:'dd/MM/yyyy' }}" placeholder="{{ task.date | date:'dd/MM/yyyy' }}">
+      </div>
+      <div class="excerpt-grid">
+        <input type="text" class="form-control" value="{{ task.excerpt }}" name="excerpt" formControlName="excerpt" placeholder="Summary message" required minlength="9" maxlength="40">
+      </div>
+      <div class="text-grid">
+        <textarea class="form-control" aria-label="With textarea" value="{{task.content}}" name="content" formControlName="content" required maxlength="400"></textarea>
+      </div>
+      <div *ngIf="modalType === 'RE-ASSIGNE'" class="fromName-grid">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">FROM</span>
+          </div>
+          <input type="text" disabled placeholder="{{task.author.firstName}} {{task.author.lastName}}" class="form-control" name="author">
+        </div>
+      </div>
+      <div *ngIf="modalType === 'RE-ASSIGNE'" class="reassignFrom-grid">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">RE-ASSIGN FROM</span>
+          </div>
+          <input type="hidden" class="form-control" placeholder="{{user.firstName}} {{user.lastName}}" formControlName="reassigned" >
+          <input type="text" disabled class="form-control" placeholder="{{user.firstName}} {{user.lastName}}">
+        </div>
+      </div>
+      <div class="addTask-grid">
+        <button type="submit" (click)="hideAfter()" class="btn btn-primary" [disabled]="chooseAssignTo()">ADD TASK</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</ng-template>

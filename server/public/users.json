@@ -1,0 +1,95 @@
+[
+  {
+    "first_name": "Firstname",
+    "last_name": "Surname",
+    "position": "position",
+    "manager": {
+      "managerID": 123,
+      "managerName": "Manager name"
+    },
+    "teamlead": {
+      "teamleadID": 321,
+      "teamleadName": "Teamlead name"
+    },
+    "department": {
+      "name": "Department name",
+      "id": 123
+    },
+    "email": "Email",
+    "phone": "+3800000000",
+    "contacts": {
+      "skype": "skype",
+      "telegram": "telegram"
+    },
+    "photoURL": "https://photo.url",
+    "hrID": 321,
+    "date" : [
+      {
+        "topic": "some topic",
+        "date": "31/03/2019"
+      }
+    ]
+  },
+  {
+    "first_name": "Firstname",
+    "last_name": "Surname",
+    "position": "position",
+    "manager": {
+      "managerID": 123,
+      "managerName": "Manager name"
+    },
+    "teamlead": {
+      "teamleadID": 321,
+      "teamleadName": "Teamlead name"
+    },
+    "department": {
+      "name": "Department name",
+      "id": 123
+    },
+    "email": "Email",
+    "phone": "+3800000000",
+    "contacts": {
+      "skype": "skype",
+      "telegram": "telegram"
+    },
+    "photoURL": "https://photo.url",
+    "hrID": 321,
+    "date" : [
+      {
+        "topic": "some topic",
+        "date": "31/03/2019"
+      }
+    ]
+  },
+  {
+    "first_name": "Firstname",
+    "last_name": "Surname",
+    "position": "position",
+    "manager": {
+      "managerID": 123,
+      "managerName": "Manager name"
+    },
+    "teamlead": {
+      "teamleadID": 321,
+      "teamleadName": "Teamlead name"
+    },
+    "department": {
+      "name": "Department name",
+      "id": 123
+    },
+    "email": "Email",
+    "phone": "+3800000000",
+    "contacts": {
+      "skype": "skype",
+      "telegram": "telegram"
+    },
+    "photoURL": "https://photo.url",
+    "hrID": 321,
+    "date" : [
+      {
+        "topic": "some topic",
+        "date": "31/03/2019"
+      }
+    ]
+  }
+]

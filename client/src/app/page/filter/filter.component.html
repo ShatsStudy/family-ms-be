@@ -1,0 +1,8 @@
+<div class="filter-item child-{{cssClass}}" *ngFor="let filterItem of filters;">
+  <app-dropdown-filter *ngIf="filterItem.isCalendar == false" class="filter-item-container"
+                       [cssClassName]="cssClassNames" [filterItem]="filterItem"
+                       (filterVal)="sendFilterVal(filterItem.id, $event)"></app-dropdown-filter>
+  <app-datepicker-filter *ngIf="filterItem.isCalendar == true" class="filter-item-container"
+                         [cssClassName]="cssClassNames" [filterItem]="filterItem"
+                         (filterVal)="sendFilterVal(filterItem.id, $event)"></app-datepicker-filter>
+</div>

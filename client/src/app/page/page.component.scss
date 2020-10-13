@@ -1,0 +1,102 @@
+@import "../common/css/theme";
+
+.main-wrapper {
+  min-height: 100vh;
+  padding: 90px 0 20px 0;
+  font-family: $font-stack;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  background: $bg-color;
+  color: $text-color;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.filter-wrapper {
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.filter-wrapper.filter-col-1,
+.filter-wrapper.filter-col-2 {
+  justify-content: flex-end;
+}
+
+.filter-wrapper.filter-col-3,
+.filter-wrapper.filter-col-4,
+.filter-wrapper.filter-col-5 {
+  display: grid;
+  grid-column-gap: $grid-gutter-width;
+}
+
+.filter-wrapper.filter-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.filter-wrapper.filter-col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.filter-wrapper.filter-col-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.sidebar-wrapper {
+  @media (max-width: 991px) {
+    margin-bottom: 40px;
+  }
+}
+
+.filter-wrapper.filter-col-2 {
+  @media (max-width: 760px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: $grid-gutter-width;
+
+    @media (max-width: 539px) {
+      display: block;
+    }
+  }
+}
+
+.container-fluid.header-navbar {
+  position: fixed;
+  top: 0;
+  padding: 0;
+  z-index: 1000;
+}
+
+.container-fluid.header-navbar.show {
+  animation-name: show-animation;
+  animation-duration: 0.2s;
+}
+.container-fluid.header-navbar.hide {
+  top: -70px;
+  animation-name: hide-animation;
+  animation-duration: 0.2s;
+}
+
+@keyframes show-animation {
+  from {
+    top: -70px;
+  }
+  50% {
+    top: -33px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes hide-animation {
+  from {
+    top: 0px;
+  }
+  50% {
+    top: -33px;
+  }
+  to {
+    top: -70px;
+  }
+}

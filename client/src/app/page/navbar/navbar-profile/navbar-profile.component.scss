@@ -1,0 +1,174 @@
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+
+@import "../../../common/css/theme";
+
+p {
+  padding: 0;
+  margin: 0;
+}
+a {
+  border: none;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+:host {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  @include media-breakpoint-up(md) {
+    min-width: 20vmin;
+  }
+  .user-bar__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-left: 25px;
+    @include media-breakpoint-up(md) {
+      margin-left: 30px;
+    }
+  }
+  & :first-child {
+    justify-content: flex-start;
+  }
+  & :last-child {
+    justify-content: flex-end;
+  }
+  .notifications {
+    display: flex;
+    align-items: center;
+    cursor: default;
+    &__icon {
+      height: auto;
+      width: 4vmin;
+      margin-right: 5px;
+      @include media-breakpoint-up(md) {
+        width: 3vmin;
+      }
+    }
+    &__count {
+      font: normal 12px arial, sans-serif;
+    }
+  }
+  .dates {
+    display: flex;
+    align-items: center;
+    cursor: default;
+    &__icon {
+      height: auto;
+      width: 4vmin;
+      margin-right: 5px;
+      @include media-breakpoint-up(md) {
+        width: 3vmin;
+      }
+    }
+    &__count {
+      font: normal 12px arial, sans-serif;
+    }
+  }
+  .user-bar {
+    &__btn {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end !important;
+      align-items: center;
+      width: 100%;
+      cursor: pointer;
+    }
+    &__name {
+      display: none;
+      @include media-breakpoint-up(md) {
+        display: flex;
+        justify-content: center;
+        font: $base-font-size $font-stack;
+        color: $bg2-color;
+      }
+      a {
+        text-decoration: none;
+        color: $bg2-color;
+      }
+    }
+    &__avatar {
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      @include media-breakpoint-up(md) {
+        height: 30px;
+        width: 30px;
+      }
+    }
+    &__menu {
+      margin: 0 !important;
+      padding: 0;
+      right: 0 !important;
+      left: auto !important;
+      width: 180px;
+      border-color: $border-color;
+      border-radius: 1px;
+      @include media-breakpoint-up(md) {
+        width: auto;
+      }
+    }
+    &__newTasks {
+      width: 220px;
+      max-height: 462px;
+      overflow-y: scroll;
+      @include media-breakpoint-up(md) {
+        right: auto !important;
+        left: auto !important;
+      }
+      & a {
+        color: $primary-color;
+      }
+    }
+    &__elem {
+      font: normal 12px $font-stack;
+      color: $primary-color;
+      padding: 17px;
+      text-transform: capitalize;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      &:hover,
+      &.active {
+        background-color: $bg-color;
+      }
+      @include media-breakpoint-up(md) {
+        font: $base-font-size $font-stack;
+      }
+    }
+  }
+}
+
+ul::-webkit-scrollbar {
+  width: 8px;
+}
+ul::-webkit-scrollbar-track {
+  background-color: $bg-color;
+}
+ul::-webkit-scrollbar-thumb {
+  height: 10px;
+  border-radius: 1px;
+  background-color: rgba(132, 198, 252, 0.466);
+  transition: 0.6s ease-in-out;
+}
+ul::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(38, 152, 251, 0.685);
+}
+
+.dates-topic {
+  display: flex;
+  justify-content: flex-start !important;
+  text-transform: capitalize;
+}
+
+.dates-topic span {
+  margin-left: 5px;
+}

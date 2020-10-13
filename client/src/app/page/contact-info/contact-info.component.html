@@ -1,0 +1,8 @@
+<div class="container-fluid main-wrapper">
+  <section class="page-wrapper">
+    <app-user-filter (getFilterText)="takeFilterValue($event)"></app-user-filter> 
+    <div class="mt-3">
+      <app-user-list [users] = users [filterText]="filterText"></app-user-list>
+    </div>
+  </section>
+</div>

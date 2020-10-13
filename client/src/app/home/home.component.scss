@@ -1,0 +1,77 @@
+@import "../common/css/theme";
+@import "../common/css/theme.form";
+
+.main-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form.container {
+  padding: 30px;
+}
+
+.card {
+  width: 432px;
+  background: $bg-color;
+  font-family: $font-stack;
+  font-weight: bold;
+  border-radius: 0;
+
+  .card-title {
+    padding: 30px 0 0 30px;
+    color: $primary-color;
+    font-size: 20px;
+  }
+
+  .card-home {
+    padding-top: 0;
+  }
+}
+
+label {
+  font-size: 10px;
+  color: $primary-color;
+}
+
+input {
+  border: 1px solid $border-color;
+  border-radius: 0;
+  height: 40px !important;
+}
+
+.form-button {
+  .login-button {
+    width: 100%;
+    position: relative;
+    font-size: 12px;
+    border-radius: 0;
+    border: none;
+    padding: 12px;
+    height: 40px;
+    cursor: pointer;
+    background-color: $primary-color !important;
+  }
+
+  .forgotpsw-button {
+    width: 100%;
+    position: relative;
+    color: $primary-color;
+    border-color: $primary-color !important;
+    font-size: 12px;
+    padding: 12px;
+    border-radius: 0;
+    height: 40px;
+    cursor: pointer;
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.card {
+  @media (max-width: 450px) {
+    width: 368px;
+  }
+}

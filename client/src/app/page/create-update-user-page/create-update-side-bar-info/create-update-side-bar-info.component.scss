@@ -1,0 +1,59 @@
+@import '../../../common/css/theme';
+
+.create-user-bar-info {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  color: $primary-color;
+  font-family: $font-stack;
+  align-items: flex-end;
+
+  .info-form {
+    padding: 10px 0 10px 0;
+    .input-label {
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      label {
+        margin-bottom: 0;
+      }
+    }
+    .form-control {
+      height: 50px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 0;
+      background-color: #fff;
+      color: $primary-color;
+      border: $case-color solid 1px;
+      padding-left: 10px;
+    }
+    .border-red {
+      border-left: 5px solid #ff000069;
+    }
+    .border-green {
+      border-left: 5px solid #28a74575;
+    }
+    ::placeholder {
+      color: $primary-color;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  @media (min-width: 600px) {
+    .row {
+      display: grid;
+      grid-column-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .column {
+      width: 100%;
+    }
+    .column:last-of-type {
+      margin-top: 37px;
+    }
+  }
+}

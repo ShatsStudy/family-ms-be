@@ -1,0 +1,6 @@
+<div class="accordion-wrapper" *ngFor="let task of tasks; trackBy: trackElement">
+  <app-item [task]="task" id="{{ task.id }}"></app-item>
+</div>
+<input type="submit" (click)="downloadPDF()" value="Downoload PDF" class="ml-auto downloadPDF"
+  [disabled]="!tasks.length" />
+<!-- <button type="button" (click)="downloadPDF()">Downoload PDF</button> -->

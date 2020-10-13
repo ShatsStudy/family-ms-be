@@ -1,0 +1,122 @@
+@import "theme";
+
+select,
+button,
+textarea,
+input {
+  width: 100%;
+  height: 50px;
+  padding: 17px 20px;
+  border: 1px solid $border-color !important;
+  border-radius: 0;
+  background-color: $bg2-color;
+  color: $text-color;
+  font-size: $base-font-size;
+  text-align: left;
+  line-height: 1em;
+}
+
+textarea {
+  height: 120px;
+}
+
+select:focus,
+textarea:focus,
+input:not([type="button"]):focus,
+input:not([type="submit"]):focus {
+  outline: 0;
+}
+
+textarea::placeholder,
+input::placeholder,
+input::placeholder {
+  color: $border-color;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+  width: auto;
+  border-color: $case-color;
+  background: $bg2-color;
+  color: $primary-color;
+  font-size: $btn-font-size;
+  padding: 0 28px;
+  text-align: center;
+}
+
+button:hover,
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: $bg-color;
+  .add__icon {
+    margin-right: 10px;
+    color: white;
+  }
+}
+
+button[type="submit"],
+input[type="submit"] {
+  border-color: $primary-color;
+  background: $primary-color;
+  color: $bg2-color;
+  text-transform: uppercase;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  border-color: $case-color;
+  background: $bg2-color;
+  color: $primary-color;
+}
+
+button[type="submit"]:disabled,
+input[type="submit"]:disabled,
+button[type="submit"]:disabled:hover,
+button[type="submit"]:disabled:focus,
+input[type="submit"]:disabled:hover,
+input[type="submit"]:disabled:focus {
+  border-color: $case-color;
+  background: $bg2-color;
+  color: $border-color;
+}
+
+.light-button {
+  background-color: $case-color;
+  border-color: $primary-color;
+  color: $primary-color;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: $small-font-size;
+  line-height: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.alert-danger {
+  margin: 10px 0;
+  border-radius: 0;
+  width: 100%;
+}
+
+.alert-danger.visible-temporarily {
+  animation: cssAnimation 0s ease-in 5s forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+}

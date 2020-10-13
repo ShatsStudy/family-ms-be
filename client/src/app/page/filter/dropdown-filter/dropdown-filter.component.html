@@ -1,0 +1,13 @@
+<div class="btn-group {{cssClassName}} {{dropDownPositionClassNames}}" dropdown #dropDownWrapper>
+  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle filter-el"
+          aria-controls="dropdown-basic">
+    {{ title }} <span class="caret"></span>
+  </button>
+  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu filter-el" role="menu"
+      aria-labelledby="button-basic">
+    <li role="menuitem" *ngFor="let opt of options;">
+      <a *ngIf="filterItem.defaultValue === opt.value" class="dropdown-item active" href="#" (click)="selectIt(opt.value, $event)">{{ opt.name }}</a>
+      <a *ngIf="filterItem.defaultValue !== opt.value" class="dropdown-item" href="#" (click)="selectIt(opt.value, $event)">{{ opt.name }}</a>
+    </li>
+  </ul>
+</div>

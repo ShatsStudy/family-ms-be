@@ -1,0 +1,18 @@
+<div class="btn-group {{cssClassName}} {{dropDownPositionClassNames}}" dropdown (onHidden)="dropDownClosed()" [dropup]="isDropup"
+     #dropDownWrapper>
+  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle filter-el"
+          aria-controls="dropdown-basic">
+    {{ title }} <span class="caret"></span>
+  </button>
+  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu filter-el" role="menu"
+      aria-labelledby="button-basic">
+    <li role="menuitem">
+      <div  class="form-group">
+        <bs-datepicker-inline [bsValue]="dateDefault" (bsValueChange)="selectDate($event)"></bs-datepicker-inline>
+      </div>
+    </li>
+    <li role="menuitem">
+      <a class="dropdown-item" href="#" (click)="cancelFilter(filterItem.options[0].value, $event)">{{ cancelLinkText }}</a>
+    </li>
+  </ul>
+</div>

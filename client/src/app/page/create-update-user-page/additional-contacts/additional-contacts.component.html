@@ -1,0 +1,31 @@
+<form [formGroup]="addContacts">
+  <div formArrayName="form_contacts">
+    <div class="row add-contact" *ngFor="let contact of form_contacts.controls; let i = index">
+      <form [formGroup]="contact" class="row add-contact">
+        <div class="col-md-4 dropdown-contact" (click)="getContacts()">
+          <app-contact-types (selectOption)="onSelectedOption($event)" [id]='i' class="dropdown-contact">
+          </app-contact-types>
+        </div>
+        <div class="col-md-6 input-contact">
+          <input formControlName="contact_value" (blur)="getContacts()" class="form-control" type="text"
+            placeholder="Contact" aria-label="Add Contact">
+          <div *ngIf="contact.get('contact_value').hasError('required')" class="danger-text">
+            Login is required.
+          </div>
+        </div>
+        <div (click)="removeContact(i)" class="col-md-2 delete-icon">
+          <img _ngcontent-c4="" alt="delete" class="delete__icon" src="assets/img/delete.svg">
+        </div>
+      </form>
+    </div>
+  </div>
+</form>
+
+<div *ngIf="!isValid" class="danger-text">
+  Fill all inputs please.
+</div>
+
+<button class="light-button fields-button" (click)="addContact()">
+  <img _ngcontent-c4="" alt="add" class="add__icon" src="assets/img/add.svg">
+  Add fields
+</button>

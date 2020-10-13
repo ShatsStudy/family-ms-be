@@ -1,0 +1,71 @@
+@import '../../../common/css/theme';
+@import '../../../common/css/theme.form';
+
+.main-user-info {
+  max-width: 580px;
+  margin-top: 15px;
+
+  p {
+    font-size: 20px;
+  }
+
+  .update-button {
+    height: 48px;
+    width: 150px;
+    margin-left: 18px;
+    margin-top: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.additional-info {
+  margin-top: 50px;
+
+  @media (max-width: 991px) {
+    margin-top: 0;
+  }
+
+  .add__icon {
+    margin-right: 10px;
+  }
+  .delete__icon {
+    margin: 16px;
+    cursor: pointer;
+  }
+
+  .user-info {
+    padding-top: 25px;
+  }
+
+  .date-info {
+    margin-left: 40px;
+    padding: 25px;
+    height: 100%;
+    background-color: $bg2-color;
+
+    @media (max-width: 991px) {
+      margin-left: 0;
+      margin-top: 40px;
+    }
+
+    .date-button {
+      width: 100%;
+      margin-top: 24px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  .info-form {
+    padding: 10px 0 10px 0;
+
+    .form-control {
+      height: 50px;
+      width: 100%;
+
+    }
+  }
+}

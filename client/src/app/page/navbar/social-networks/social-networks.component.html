@@ -1,0 +1,5 @@
+<div class="item" *ngFor="let link of links; trackBy: trackById">
+  <a href="{{ link.link }}" target="_blank">
+    <img src="{{ link.icon }}" alt="{{ link.title }}" class="icon">
+  </a>
+</div>

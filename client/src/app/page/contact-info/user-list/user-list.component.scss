@@ -1,0 +1,99 @@
+@import "../../../common/css/theme";
+
+.list-users {
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid $border-color;
+  font-size: $base2-font-size;
+  color: $text-color;
+  width: fit-content;
+
+  .box {
+    position: relative;
+    padding: 20px 10px;
+    cursor: pointer;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: 1.2em;
+    min-width: 220px;
+    max-width: 220px;
+  }
+}
+
+.box-wrapper > * {
+  float: left;
+}
+
+.box-wrapper:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+@media (max-width: 970px) {
+  .box {
+    text-align: left;
+  }
+}
+
+.box-wrapper {
+  display: flex;
+  @media (max-width: 970px) {
+    padding: 20px 10px;
+
+    .box {
+      float: none;
+      padding: 5px 0;
+      max-width: 100%;
+      width: 100%;
+      flex: 1;
+    }
+
+    .box:not(:last-child) {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .box-wrapper {
+    max-width: 100%;
+    width: 100%;
+    flex: 1;
+
+    .box {
+      text-align: center;
+    }
+  }
+}
+
+.wrapper {
+  overflow-x: auto;
+}
+.header {
+  background: $bg-color !important;
+}
+.box {
+  background: #fff;
+}
+.name {
+  left: 0;
+  position: sticky !important;
+  z-index: 1;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 3px 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+button {
+  width: 50%;
+  position: relative;
+  background: $case-color;
+  color: $primary-color;
+  font-size: 15px;
+  padding: 12px;
+  border-radius: 0;
+  cursor: pointer;
+}

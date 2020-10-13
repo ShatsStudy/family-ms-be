@@ -1,0 +1,67 @@
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+
+@import "../../common/css/theme";
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  border: 0;
+  text-decoration: none;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+:host {
+  user-select: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  color: $bg2-color;
+  background-color: $primary-color !important;
+  padding: 0 10px !important;
+  .navbar-block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+    & div:first-child {
+      justify-content: flex-start;
+      margin-right: 20px;
+    }
+  }
+  .navbar-item {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    &__btn-menu {
+      display: flex;
+      align-items: center;
+      width: 4vmin;
+      @include media-breakpoint-up(md) {
+        width: 3vmin;
+      }
+    }
+    &__logo {
+      display: flex;
+      align-items: center;
+      width: 20vmin;
+    }
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}

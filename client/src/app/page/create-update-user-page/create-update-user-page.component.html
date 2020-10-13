@@ -1,0 +1,22 @@
+<main class="row ">
+  <div class="col-lg-4 sidebar-wrapper">
+    <app-create-update-side-bar-info #createUserComponent [showModal]="user._id || create" [user]="user">
+    </app-create-update-side-bar-info>
+  </div>
+  <div class="col-lg-8 sidebar-wrapper">
+    <app-create-update-user (sendContacts)="setContacts($event)" (sendMContacts)="setMContacts($event)">
+    </app-create-update-user>
+
+  <div class="row save-profile">
+    <div class="col">
+      <div>
+        <button class="save-button" (click)="extractUser(createUserComponent.user,
+            createUserComponent.ifChosenDevelopmentDepartment,
+            createUserComponent.ifChosenHrDepartment)">
+          Save profile
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</main>

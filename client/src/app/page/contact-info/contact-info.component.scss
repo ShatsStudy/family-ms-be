@@ -1,0 +1,24 @@
+@import '../../common/css/theme';
+
+.main-wrapper {
+  min-height: 100vh;
+  font-family: $font-stack;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  background: $bg-color;
+  color: $primary-color;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.sidebar-wrapper{
+  @media (max-width: 991px){
+    margin-bottom: 40px;
+  }
+}
+.container-fluid.header-navbar {
+  position: fixed;
+  top: 0;
+  padding: 0;
+  z-index: 1000;
+}

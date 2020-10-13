@@ -1,0 +1,46 @@
+<div class="user-bar__item btn-group dates" dropdown *ngIf="datesCount">
+  <div class="user-bar__btn" dropdownToggle>
+    <img src="assets/img/navbar-dates-desk.svg" alt="all dates" class="dates__icon">
+    <span class="dates__count">({{ datesCount }})</span>
+  </div>
+  <ul class="user-bar__menu dropdown-menu" *dropdownMenu role="menu" aria-labelledby="button-disabled-item">
+    <li class="user-bar__row user-bar__elem  dropdown-item" *ngFor="let dates of dateList; trackBy: trackById"
+      role="menuitem" [routerLink]="[ '/profile/upcoming-dates' ]" (click)="currentByRout('/profile/upcoming-dates')">
+      <div class="dates-topic">
+        <div *ngIf="typeOfUser"> {{ dates.firstName }} {{ dates.lastName }}'s </div>
+        <span> {{ dates.topic }}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="user-bar__item notifications" dropdown *ngIf="newTasksCount">
+  <div class="user-bar__btn" dropdownToggle>
+    <img src="assets/img/navbar-notifications-desk.png" alt="new tasks" class="notifications__icon">
+    <span class="notifications__count">({{ newTasksCount }})</span>
+  </div>
+  <ul class="user-bar__menu user-bar__newTasks dropdown-menu" *dropdownMenu role="menu"
+    aria-labelledby="button-disabled-item">
+    <li class="user-bar__row user-bar__elem dropdown-item" *ngFor="let newTask of newTasks; trackBy: trackById"
+      role="menuitem" (click)="openTaskByid(newTask.id)">
+      <b>{{ newTask.name }}</b><br>
+      <a>{{ newTask.date | date:"dd/MM/yyyy" }}
+        {{ newTask.author.firstName }} {{ newTask.author.lastName }}</a>
+    </li>
+  </ul>
+</div>
+<div class="user-bar__item user-bar__name">
+  <a href [routerLink]="[ '/profile/my-profile' ]"> {{ user.firstName }}
+    {{ user.lastName }}
+  </a>
+</div>
+<div class="user-bar__item btn-group" dropdown>
+  <div class="user-bar__btn" dropdownToggle>
+    <img class="user-bar__avatar" [src]="avatar" alt="avatar">
+  </div>
+  <ul class="user-bar__menu dropdown-menu" *dropdownMenu role="menu" aria-labelledby="button-disabled-item">
+    <ng-container *ngFor="let link of menuList; let i = index; trackBy: trackById;">
+      <app-menu-item [settings]="itemMenuSettings" [link]="link" (clickOnMenuItem)="currentByIndex(i)">
+      </app-menu-item>
+    </ng-container>
+  </ul>
+</div>

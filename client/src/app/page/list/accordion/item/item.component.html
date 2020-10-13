@@ -1,0 +1,63 @@
+<div class="container-fluid" *ngIf='markResolve'>
+  <div class="row alert alert-success message-position">
+    <span>{{ alertMessage }}</span>
+  </div>
+</div>
+<accordion>
+  <accordion-group #group [isOpen]="isOpen" (click)="openTask()">
+    <div accordion-heading class="heading-grid">
+      <div class={{unreadClass}}></div>
+      <span>{{ task.id }}</span>
+      <div class="heading-text">
+        <h5>{{ task.name }}</h5>
+        <p *ngIf="task.resolvedByAuthor === true || task.resolvedByPerformer === true"
+          class="waiting {{cssClassVisible}}">Waiting for second mark</p>
+      </div>
+      <div class="heading-excerpt">
+        <p>{{ task.excerpt }}</p>
+      </div>
+      <div class="heading-filter">
+        <p>{{ task.status.name }}</p>
+      </div>
+      <div class="heading-date">
+        <p>{{ task.date | date:"dd/MM/yyyy" }}</p>
+      </div>
+      <div class="heading-icon">
+      </div>
+    </div>
+    <div class="body-grid">
+      <div class={{unreadClass}}></div>
+      <div class="body-text">
+          <p>{{ task.content }}</p>
+      </div>
+      <div class="body-from">
+        <span>From: </span>
+        <span class="bold pointer" (click)="selectUser(task.author._id)">{{ task.author.firstName }}
+          {{ task.author.lastName }}</span>
+      </div>
+      <div class="body-resolve">
+        <button type="submit" (click)="resolveClick()" class="btn btn-outline-primary mark-resolve {{cssClass}}">
+          MARK AS RESOLVED
+        </button>
+      </div>
+      <div class="comment">
+        <app-comment-modal [task]="task"></app-comment-modal>
+      </div>
+      <div class="reassign-button">
+        <app-modal [modalType]="'RE-ASSIGNE'" [task]="task"></app-modal>
+      </div>
+      <div class="view-comment" dropdown *ngIf="task.comments">
+        <span dropdownToggle>ViewComment ({{ task.comments.length }})</span>
+        <ul class="user-bar__menu dropdown-menu" *dropdownMenu role="menu" aria-labelledby="button-disabled-item">
+          <li class="user-bar__row user-bar__elem  dropdown-item" *ngFor="let comments of task.comments"
+            role="menuitem">
+            <div>
+              <div class="comment-creator"> {{ comments.creator.firstName }} {{ comments.creator.lastName }} </div>
+              <p class="comment-content"> {{ comments.content }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </accordion-group>
+</accordion>

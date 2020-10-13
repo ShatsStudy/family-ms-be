@@ -1,0 +1,29 @@
+@import "../../../common/css/theme";
+@import "../../../common/css/theme.form";
+
+.add-contact {
+  margin-left: 1px;
+  margin-top: 15px; 
+
+  .dropdown-contact {
+    margin: 0;
+    padding: 0;
+  }
+
+  .delete-icon {
+    margin-top: 11px;
+  }
+
+  .danger-text {
+    margin-top: 5px;
+    color: red;
+  }
+}
+
+.fields-button {
+  width: 100%;
+  margin-top: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}

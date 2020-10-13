@@ -1,0 +1,133 @@
+@import "../../common/css/theme";
+
+.user-bar-info {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  align-items: center;
+  padding: 10px;
+  color: $text-color;
+  text-align: center;
+  justify-content: space-between;
+
+  .photo {
+    flex: 2 40%;
+  }
+  #bt {
+    flex: 2 60%;
+  }
+  .toggle-show {
+    flex: 1 100%;
+  }
+  .check-button {
+    background-color: $bg-color;
+    border: 1px solid $primary-color;
+    justify-content: center;
+    padding: 7px 7px 7px 7px;
+  }
+  .check-button:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  .main-user-info {
+    margin: 20px 0 15px 0;
+    line-height: normal;
+    span {
+      margin-bottom: 10px;
+      font-size: $base-font-size;
+    }
+    div:first-child {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    div:last-child {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+  }
+  .additional-info {
+    margin-top: 40px;
+  }
+
+  @media (max-width: 1199px) {
+    @media (min-width: 501px) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      text-align: left;
+    }
+
+    @media (max-width: 1199px) {
+      @media (min-width: 767px) {
+        text-align: center;
+        padding-top: 20px;
+
+        .main-user-info {
+          :first-child {
+            font-size: 2rem;
+            line-height: 1.1em;
+          }
+          :last-child {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    @media (max-width: 1199px) {
+      @media (min-width: 992px) {
+        display: grid;
+        padding-bottom: 30px;
+        grid-template-columns: repeat(1, 1fr);
+
+        .main-user-info {
+          margin: 40px 0 30px 0;
+          :first-child {
+            font-size: 30px;
+            margin: 15px;
+          }
+          :last-child {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    @media (min-width: 1200px) {
+      padding-top: 20px;
+      .main-user-info {
+        margin: 40px 0 30px 0;
+        :first-child {
+          font-size: 35px;
+          margin-bottom: 15px;
+        }
+        :last-child {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  #bt,
+  #bt + label {
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    #bt + label {
+      display: block;
+      flex: 2 50%;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    #bt + label + div {
+      display: none;
+    }
+    #bt:checked + label + div {
+      display: block;
+      line-height: 2em;
+    }
+  }
+}

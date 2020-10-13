@@ -1,0 +1,39 @@
+@import "../../../common/css/theme";
+
+.additional-info {
+  margin-bottom: 20px;
+  line-height: 1.4em;
+  :first-child {
+    font-size: $base-font-size;
+  }
+  :last-child {
+    font-size: 1.3rem;
+    font-weight: bold;
+    &:hover {
+    }
+  }
+
+  @media (max-width: 1199px) {
+    @media (min-width: 992px) {
+      line-height: 1.4em;
+      margin-bottom: 30px;
+      :first-child {
+        font-size: 15px;
+        margin: 10px 0 10px 0;
+      }
+      :last-child {
+        font-size: 22px;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    margin: 40px 0 40px 0;
+    :first-child {
+      font-size: 18px;
+      margin: 10px 0 10px 0;
+    }
+    :last-child {
+      font-size: 24px;
+    }
+  }
+}

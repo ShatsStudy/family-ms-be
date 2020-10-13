@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <div class="row list-users">
+    <div class="box-wrapper">
+      <div class="box header name font-weight-bold">
+        Name
+      </div>
+      <div class="box header">
+        Role
+      </div>
+      <div class="box header email">
+        E-mail
+      </div>
+      <div class="box header">
+        Telephone
+      </div>
+      <div class="box header">
+        Birthday
+      </div>
+      <div class="box header">
+        Working/Study hours
+      </div>
+      <div class="box header">
+        Job/Study adress
+      </div>
+    </div>
+  </div>
+  <div class="row list-users" *ngFor="let user of users | filterUsersBy: filterText;" (click)="selectUser(user._id)">
+    <div class="box-wrapper">
+      <div class="box name font-weight-bold">
+        {{ user.firstName }} {{ user.lastName }}
+      </div>
+      <div class="box">
+        {{ user.position }}
+      </div>
+      <div class="box email">
+        {{ user.email }}
+      </div>
+      <div class="box">
+        {{ user.phone }}
+      </div>
+      <div class="box">
+        {{ user.birthdayDate | date:"dd/MM/yy" }}
+      </div>
+      <div class="box">
+        {{ user.workingHoursFrom }} - {{ user.workingHoursTo }}
+      </div>
+      <div class="box">
+        {{ user.workAdress }}
+      </div>
+    </div>
+  </div>
+</div>

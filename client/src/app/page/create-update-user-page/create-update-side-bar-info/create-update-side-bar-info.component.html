@@ -1,0 +1,50 @@
+<div class="create-user-bar-info row" *ngIf="showModal">
+  <div class="column w-100">
+    <div class="upload-image">
+      <app-user-image [imageURL]="user.photoURL" class="photo"></app-user-image>
+      <app-update-avatar [id]="user._id" (onUpload)="updateAvatar($event)"></app-update-avatar>
+    </div>
+    <div class="info-form">
+      <div class="input-label">
+        <label for="first-name">First Name</label>
+      </div>
+      <input [(ngModel)]="user.firstName" class="form-control" type="text" placeholder="Name" id='first-name'
+        aria-label="Username" [ngClass]="!user.firstName ? ['border-red'] : ['border-green']">
+    </div>
+    <div class="info-form">
+      <div class="input-label">
+        <label for="last-name">Last Name</label>
+      </div>
+      <input [(ngModel)]="user.lastName" class="form-control" type="text" placeholder="Surname" id='last-name'
+        aria-label="UserSurname" aria-describedby="addon-wrapping"
+        [ngClass]="!user.lastName ? ['border-red'] : ['border-green']">
+    </div>
+    <div class="info-form">
+      <div class="input-label">
+        <label for="last-name">Work/Study adress</label>
+      </div>
+      <input [(ngModel)]="user.lastName" class="form-control" type="text" placeholder="Surname" id='last-name'
+        aria-label="UserSurname" aria-describedby="addon-wrapping"
+        [ngClass]="!user.lastName ? ['border-red'] : ['border-green']">
+    </div>
+    <div class="info-form">
+      <div class="input-label">
+        <label for="last-name">Working/Study hours</label>
+      </div>
+      <input [(ngModel)]="user.lastName" class="form-control" type="text" placeholder="Surname" id='last-name'
+        aria-label="UserSurname" aria-describedby="addon-wrapping"
+        [ngClass]="!user.lastName ? ['border-red'] : ['border-green']">
+    </div>
+  </div>
+  <div class="column w-100">
+    <div class="info-form">
+      <div class="input-label">
+        <label for="position">Position</label>
+      </div>
+      <app-dropdown-info class="info-input-area" id="position" [pairList]="positions"
+        (selected)="user.position = $event" [required]="true" [update]="user.position"
+        [positionIdentifier]="'position'">
+      </app-dropdown-info>
+    </div>
+  </div>
+</div>

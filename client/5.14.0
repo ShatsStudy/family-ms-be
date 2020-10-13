@@ -1,0 +1,4 @@
++ tslint@5.15.0
+updated 1 package and audited 42909 packages in 81.35s
+found 1 high severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details

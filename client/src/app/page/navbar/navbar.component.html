@@ -1,0 +1,26 @@
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-dark bg-primary p-0">
+    <div class="col-5 col-sm-2 col-md-3 col-lg-2 d-flex justify-content-between pr-0 h-100">
+      <div class="navbar-block">
+        <div class="navbar-item">
+          <a href (click)="toggleIsActive()" class="navbar-item__btn-menu">
+            <img src="assets/img/navbar-menu-desk.png" alt="menu">
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href [routerLink]="[ '/profile/upcoming-tasks' ]" (click)="closeBurgerMenu(false)"
+            class="navbar-item__logo">
+            <span class="logo"> Family </span>
+            <!-- <img src='assets/img/logo-desk.png' alt="logo/main-page"> -->
+          </a>
+        </div>
+      </div>
+      <app-burger-menu [userType]="userType" [menuList]="menuList" [active]="active"
+        (focusOut)="closeBurgerMenu($event)"></app-burger-menu>
+    </div>
+    <div class="col-7 col-lg-7 d-flex pl-0 h-100">
+      <app-navbar-profile [userType]="userType" [menuList]="menuList" class="flex-grow-1 h-100"
+        (click)="closeBurgerMenu(false)"></app-navbar-profile>
+    </div>
+  </nav>
+</div>

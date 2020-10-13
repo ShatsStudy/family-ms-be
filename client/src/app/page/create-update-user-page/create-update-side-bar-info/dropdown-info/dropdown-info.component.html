@@ -1,0 +1,14 @@
+<script src="dropdown-info.component.ts"></script>
+<div class="btn-group" dropdown placement="bottom right" [autoClose]="roles ? false : true">
+  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle option-el"
+    [ngClass]="setLeftBorderStylesToDropdowns()" aria-controls="dropdown-basic"> {{ title }}
+    <span class="caret"></span>
+  </button>
+  <div>
+    <ul id="dropdown-basic top" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+      <li role="menuitem" *ngFor="let pair of pairList">
+        <a class="dropdown-item" href="#" (click)="selectIt(pair, $event)"> {{ pair.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

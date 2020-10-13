@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-sm-12 col-md-6 d-flex justify-content-start">
+    <p *ngIf="getDepartmentId()">SEARCH RESULTS FOR<br> <span>{{ message }}</span></p>
+  </div>
+  <div class="col-sm-12 col-md-6 d-flex justify-content-end">
+    <input class="form-control mr-sm-2" [(ngModel)]="filterText" (ngModelChange)="onGetFilterText()" type="search" placeholder="Search" aria-label="Search">
+  </div>
+</div>

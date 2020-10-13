@@ -1,0 +1,17 @@
+{
+  "Issue": {
+    "topic": "Upcoming task name",
+    "type": "Issue",
+    "priority": "LOW",
+    "date":"31/03/2019",
+    "text": "two short sentences",
+    "assignedTo": {
+      "name": "User name",
+      "user": 123
+    },
+    "ownerId": {
+      "name": "Owner name",
+      "user": 123
+    }
+  }
+}

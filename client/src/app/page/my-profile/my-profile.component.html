@@ -1,0 +1,89 @@
+<section class="container-fluid page-wrapper">
+  <div class="row">
+    <div class="col-lg-4 sidebar-wrapper">
+      <app-user-bar-info class="user-bar-info" [userinfo]="user"></app-user-bar-info>
+    </div>
+    <main class="col-lg-8 content-wrapper" *ngIf="user">
+      <div class="row first-row">
+
+        <div class="col main-user-info">
+          <h1>{{ getFullName() }}</h1>
+          <p>{{ user.position }}</p>
+        </div>
+      </div>
+      <div class="row second-row">
+        <div class="col-lg-4 col-md-4 contact-info">
+          <div class="contact_up">
+            <div class="email">
+              <div>
+                <span class="label">email</span>
+              </div>
+              <span class="info">{{ user.email }}</span>
+            </div>
+
+            <div class="phone">
+              <div>
+                <span class="label">phone</span><br>
+              </div>
+              <span class="info">{{ user.phone }}</span>
+            </div>
+          </div>
+
+          <div class="contact_down">
+            <div *ngFor="let contact of user.contacts" class="contact_down_item">
+              <div>
+                <span class="label">{{ contact.contact_name }}</span><br>
+              </div>
+              <span class="info">{{ contact.contact_value }}</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-5 col-md-5 date-info">
+          <div class="date_up">
+            <div class="upcoming-review">
+              <div>
+                <span class="label">Birthday</span><br>
+              </div>
+              <span class="info">{{ user.birthdayDate | date }}</span>
+            </div>
+
+          </div>
+          <div class="date_down">
+            <div class="data-coming">
+              <div>
+                <span class="label">{{user.type === 'child' ? 'Study adress' : 'Work adress'}}</span><br>
+              </div>
+              <span class="info">{{user.workAdress}}</span>
+            </div>
+
+            <div class="last-login">
+              <div>
+                <span class="label">{{user.type === 'child' ? 'Study hours' : 'Working hours'}}</span><br>
+              </div>
+              <span class="info">{{user.workingHoursFrom}}-{{user.workingHoursTo}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isHr()" class="row third-row">
+        <div class="row wrap w-100">
+          <div class="button_wrapper" (click)="editUser()">
+            <a class="edit_button">Edit Profile</a>
+          </div>
+          <div class="">
+            <button type="button" id="delete-button" (click)="openModal(template)">delete profile</button>
+            <ng-template #template>
+              <div class="modal-body text-center">
+                <p>Do you want to delete {{ getFullName() }}?</p>
+                <button type="button" class="btn btn-default" (click)="confirm()">Yes</button>
+                <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
