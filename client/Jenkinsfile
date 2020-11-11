@@ -1,0 +1,47 @@
+pipeline {
+  agent {
+    docker { image 'node:latest' }
+  }
+ stages{
+    stage ('Checkout'){
+      steps{
+        checkout scm
+      }
+    }
+    stage ('Install modules'){
+      steps{
+        sh 'npm install'
+      }
+    }
+    stage ('Test'){
+      steps{
+        sh '''
+          $(npm bin)/ng test
+        '''
+      }
+      post {
+          always {
+            junit "test-results.xml"
+          }
+      }
+    }
+    stage ('code quality'){
+      steps{
+        sh '$(npm bin)/ng lint'
+      }
+    }
+    stage ('build') {
+      steps{
+        sh '$(npm bin)/ng build --prod --build-optimizer'
+      }
+    }
+    stage ('build image') {
+      steps{
+        sh '''
+          rm -rf node_modules
+          oc start-build angular-5-example --from-dir=. --follow
+        '''
+      }
+    }
+  }
+}
