@@ -1,5 +1,10 @@
 pipeline {
-  agent none
+  agent {
+      docker {
+          image 'node:6-alpine'
+          args '-p 3080:3080'
+      }
+  }
  stages{
     stage ('Checkout'){
       steps{
